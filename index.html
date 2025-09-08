@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareSign - 介護現場の電子同意システム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features">機能</a></li>
+                    <li><a href="#benefits">メリット</a></li>
+                    <li><a href="#demo">デモ</a></li>
+                    <li><a href="#contact" class="btn btn-primary">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>介護現場を変える<br><span class="highlight">電子同意システム</span></h1>
+                    <p class="hero-description">
+                        ペーパーレス・署名不要！セルフィー機能と同意ボタンで<br>
+                        ケアプランの同意を簡単・確実に
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToDemo()">
+                            <i class="fas fa-play"></i> デモを見る
+                        </button>
+                        <button class="btn btn-secondary btn-large">
+                            <i class="fas fa-download"></i> 資料ダウンロード
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="mockup-container">
+                        <div class="mockup-phone">
+                            <div class="phone-screen">
+                                <div class="app-header">
+                                    <span>ケアプラン同意</span>
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="camera-preview">
+                                    <div class="face-outline"></div>
+                                    <p>位置・日時情報付きで撮影されます</p>
+                                </div>
+                                <button class="consent-btn">同意する</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">主な機能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>セルフィー記録</h3>
+                    <p>写真に位置情報・日時情報が自動的に組み込まれ、同意の根拠として万全な記録を残します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h3>ワンクリック同意</h3>
+                    <p>複雑な署名作業は不要。直感的な同意ボタンで簡単に同意手続きが完了します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>確実な記録保持</h3>
+                    <p>写真のEXIFデータに位置情報・撮影日時が記録され、改ざん困難な証拠として保存されます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>時間短縮</h3>
+                    <p>従来の紙ベースの手続きと比べ、同意取得時間を大幅に短縮できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">導入メリット</h2>
+            <div class="benefits-content">
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-number">01</div>
+                        <div class="benefit-text">
+                            <h3>業務効率化</h3>
+                            <p>ケアプランの同意取得時間を70%短縮し、介護スタッフの負担を軽減</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">02</div>
+                        <div class="benefit-text">
+                            <h3>コスト削減</h3>
+                            <p>紙代、印刷代、保管コストを削減。年間約30万円のコストカット</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">03</div>
+                        <div class="benefit-text">
+                            <h3>セキュリティ向上</h3>
+                            <p>暗号化された電子データで情報漏洩リスクを大幅に削減</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">04</div>
+                        <div class="benefit-text">
+                            <h3>環境配慮</h3>
+                            <p>ペーパーレス化により環境負荷を軽減し、SDGsに貢献</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-chart">
+                    <h3>導入効果比較</h3>
+                    <div class="chart-container">
+                        <div class="chart-item">
+                            <label>同意取得時間</label>
+                            <div class="chart-bar">
+                                <div class="bar-before" data-value="100">従来: 15分</div>
+                                <div class="bar-after" data-value="30">導入後: 4.5分</div>
+                            </div>
+                        </div>
+                        <div class="chart-item">
+                            <label>年間コスト</label>
+                            <div class="chart-bar">
+                                <div class="bar-before" data-value="100">従来: 50万円</div>
+                                <div class="bar-after" data-value="40">導入後: 20万円</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">操作デモ</h2>
+            <div class="demo-content">
+                <div class="demo-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>ケアプラン表示</h3>
+                            <p>タブレットでケアプランの内容を確認</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>セルフィー撮影</h3>
+                            <p>位置情報・日時情報付きの写真を撮影</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>同意完了</h3>
+                            <p>同意ボタンを押して手続き完了</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-visual">
+                    <div class="tablet-mockup">
+                        <div class="tablet-screen">
+                            <div class="demo-screen" id="demo-screen-1">
+                                <h4>田中太郎様のケアプラン</h4>
+                                <div class="plan-content">
+                                    <p>• デイサービス週3回</p>
+                                    <p>• ヘルパー週2回</p>
+                                    <p>• リハビリテーション月2回</p>
+                                </div>
+                                <button class="btn btn-primary">内容を確認</button>
+                            </div>
+                            <div class="demo-screen" id="demo-screen-2" style="display: none;">
+                                <div class="camera-view">
+                                    <div class="face-detection">
+                                        <div class="face-frame"></div>
+                                    </div>
+                                    <p>位置・日時情報付きで撮影</p>
+                                </div>
+                                <button class="btn btn-success">撮影完了</button>
+                            </div>
+                            <div class="demo-screen" id="demo-screen-3" style="display: none;">
+                                <div class="success-message">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h4>同意完了</h4>
+                                    <p>ケアプランへの同意が<br>正常に記録されました</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button class="btn btn-outline" onclick="previousStep()">
+                    <i class="fas fa-chevron-left"></i> 前へ
+                </button>
+                <button class="btn btn-primary" onclick="nextStep()">
+                    次へ <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn btn-secondary" onclick="resetDemo()">
+                    <i class="fas fa-redo"></i> リセット
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">導入事例</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"同意取得の時間が大幅に短縮され、利用者様にも喜ばれています。操作も簡単で、高齢の方でも安心して使えます。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/4A90E2/FFFFFF?text=A" alt="施設長" class="author-avatar">
+                        <div class="author-info">
+                            <strong>青空介護センター</strong>
+                            <span>施設長 佐藤様</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"ペーパーレス化により、書類管理の手間が大幅に削減されました。セキュリティ面でも安心できるシステムです。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/27AE60/FFFFFF?text=B" alt="ケアマネージャー" class="author-avatar">
+                        <div class="author-info">
+                            <strong>ひまわりケアプランセンター</strong>
+                            <span>ケアマネージャー 田中様</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"導入前は署名をもらうのに時間がかかっていましたが、今では利用者様との会話の時間が増えました。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/E74C3C/FFFFFF?text=C" alt="介護士" class="author-avatar">
+                        <div class="author-info">
+                            <strong>みどり訪問介護ステーション</strong>
+                            <span>介護福祉士 鈴木様</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info-centered">
+                    <h2>お問い合わせ</h2>
+                    <p>システムの導入について、お気軽にご相談ください。<br>専門スタッフが丁寧にご説明いたします。</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>お電話でのお問い合わせ</strong>
+                                <span>0120-123-456</span>
+                                <small>平日 9:00-18:00</small>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>メールでのお問い合わせ</strong>
+                                <span>info@care-system.jp</span>
+                                <small>24時間受付</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <p>介護現場のDXを推進し、より良いケアの提供をサポートします。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="#features">機能紹介</a></li>
+                        <li><a href="#benefits">導入メリット</a></li>
+                        <li><a href="#demo">操作デモ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">資料ダウンロード</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">利用規約</a></li>
+                        <li><a href="#">セキュリティ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 介護電子同意システム. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
