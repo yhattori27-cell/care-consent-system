@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法的根拠 - CareSign 介護現場の電子同意システム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .legal-page {
+            padding-top: 80px;
+            background-color: #f8f9fa;
+        }
+        
+        .legal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .legal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 80px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 18px;
+            top: 20px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .timeline-date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .original-text {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+        }
+        
+        .original-text-label {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .original-text-label i {
+            margin-right: 8px;
+        }
+        
+        .explanation {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .explanation-label {
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .explanation-label i {
+            margin-right: 8px;
+        }
+        
+        .key-points {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .key-points h4 {
+            color: #856404;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .key-points h4 i {
+            margin-right: 8px;
+        }
+        
+        .key-points ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-points li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .key-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #856404;
+            font-weight: bold;
+        }
+        
+        .summary-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #667eea;
+        }
+        
+        .summary-title {
+            color: #667eea;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #5a6fd8;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .back-button i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="index.html#features">機能</a></li>
+                    <li><a href="index.html#benefits">メリット</a></li>
+                    <li><a href="index.html#demo">デモ</a></li>
+                    <li><a href="legal-basis.html" class="active">法的根拠</a></li>
+                    <li><a href="index.html#contact" class="btn btn-primary">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="legal-header">
+        <div class="container">
+            <h1>電子同意システムの法的根拠</h1>
+            <p>介護分野における電磁的記録による同意の法的根拠と経緯</p>
+        </div>
+    </section>
+
+    <div class="legal-content">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            ホームに戻る
+        </a>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">1</div>
+                <div class="timeline-content">
+                    <div class="timeline-date">令和3年1月25日</div>
+                    <h3 class="timeline-title">厚生労働省令第九号による基準改正</h3>
+                    
+                    <div class="original-text">
+                        <div class="original-text-label">
+                            <i class="fas fa-file-alt"></i>
+                            省令原文
+                        </div>
+                        <p><strong>指定居宅サービス等の事業の人員、設備及び運営に関する基準等の一部を改正する省令</strong><br>
+                        （令和三年一月二十五日　厚生労働省令第九号：ページ36、86など）</p>
+                        <p>この省令により、「電磁的記録」による同意が法的に認められることとなりました。</p>
+                    </div>
+                    
+                    <div class="explanation">
+                        <div class="explanation-label">
+                            <i class="fas fa-lightbulb"></i>
+                            解説
+                        </div>
+                        <p>この省令改正により、従来の紙ベースでの同意取得に加えて、電子的な方法での同意取得が正式に法的根拠を持つことになりました。これは介護現場のデジタル化を推進する重要な第一歩となる改正でした。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">2</div>
+                <div class="timeline-content">
+                    <div class="timeline-date">令和3年3月16日</div>
+                    <h3 class="timeline-title">老健局からの実施通知</h3>
+                    
+                    <div class="original-text">
+                        <div class="original-text-label">
+                            <i class="fas fa-file-alt"></i>
+                            通知原文
+                        </div>
+                        <p><strong>「指定居宅サービスに要する費用の額の算定に関する基準（訪問通所サービス、居宅療養管理指導及び福祉用具貸与に係る部分）及び指定居宅介護支援に要する費用の額の算定に関する基準の制定に伴う実施上の留意事項について」等の一部改正について</strong></p>
+                        <p>（令和3年3月16日　各都道府県介護保険主管部（局）長宛　厚生労働省老健局）</p>
+                        <p class="highlight-text">「事業者等は、交付、説明、同意、承諾、締結等について、事前に利用者又はその家族等の承諾を得た上で、次に掲げる電磁的方法によることができる。」</p>
+                    </div>
+                    
+                    <div class="explanation">
+                        <div class="explanation-label">
+                            <i class="fas fa-lightbulb"></i>
+                            解説
+                        </div>
+                        <p>老健局から各都道府県への通知により、省令改正の具体的な実施方法が示されました。特に重要なのは「事前に利用者又はその家族等の承諾を得た上で」という条件であり、これにより利用者の同意のもとで電磁的方法を使用できることが明確化されました。</p>
+                    </div>
+
+                    <div class="key-points">
+                        <h4><i class="fas fa-key"></i>ポイント</h4>
+                        <ul>
+                            <li>事前の利用者・家族の承諾が必要</li>
+                            <li>交付、説明、同意、承諾、締結等が対象</li>
+                            <li>電磁的方法の具体的な実施が可能に</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">3</div>
+                <div class="timeline-content">
+                    <div class="timeline-date">令和3年3月17日</div>
+                    <h3 class="timeline-title">専門委員会による具体的指針</h3>
+                    
+                    <div class="original-text">
+                        <div class="original-text-label">
+                            <i class="fas fa-file-alt"></i>
+                            報告書原文
+                        </div>
+                        <p><strong>「介護分野の文書に係る負担軽減について」</strong><br>
+                        （介護分野の文書に係る負担軽減に関する専門委員会（第８回）令和３年３月17日）<br>
+                        （令和３年３月17日　厚生労働省老健局）</p>
+                        <p class="highlight-text">「ケアプランや重要事項説明書等における利用者等への説明・同意について、以下の見直しを行う。<br>
+                        ア 書面で説明・同意等を行うものについて、電磁的記録による対応を原則認めることとする。」</p>
+                    </div>
+                    
+                    <div class="explanation">
+                        <div class="explanation-label">
+                            <i class="fas fa-lightbulb"></i>
+                            解説
+                        </div>
+                        <p>専門委員会の報告により、ケアプランや重要事項説明書等の具体的な文書についても電磁的記録による対応が「原則認める」とされ、より積極的な電子化の推進が示されました。これにより、当システムのようなケアプラン同意の電子化が強く後押しされることとなりました。</p>
+                    </div>
+
+                    <div class="key-points">
+                        <h4><i class="fas fa-key"></i>対象文書</h4>
+                        <ul>
+                            <li>ケアプラン</li>
+                            <li>重要事項説明書</li>
+                            <li>その他の説明・同意が必要な文書</li>
+                            <li>「原則認める」とする積極的姿勢</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2 class="summary-title">法的根拠のまとめ</h2>
+            <p>これらの一連の法改正・通知・指針により、介護現場における電磁的記録による同意取得は以下のように法的に確立されました：</p>
+            
+            <div class="key-points">
+                <h4><i class="fas fa-gavel"></i>法的効力</h4>
+                <ul>
+                    <li><strong>省令による法的根拠：</strong>厚生労働省令第九号により電磁的記録が正式に認められる</li>
+                    <li><strong>実施指針の明確化：</strong>老健局通知により具体的な実施方法が示される</li>
+                    <li><strong>積極的推進：</strong>専門委員会により「原則認める」姿勢が示される</li>
+                    <li><strong>利用者保護：</strong>事前の承諾を条件とした適切な手続きが確保される</li>
+                </ul>
+            </div>
+
+            <div class="explanation">
+                <div class="explanation-label">
+                    <i class="fas fa-check-circle"></i>
+                    システムの適法性
+                </div>
+                <p>当電子同意システムは、これらの法的根拠に基づき、セルフィー機能による本人確認と位置情報・日時情報の記録により、従来の書面による同意と同等以上の証拠能力を持つ電磁的記録を実現しています。事前の利用者承諾を得た上で運用することで、完全に適法なシステムとして介護現場でご活用いただけます。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <p>介護現場のDXを推進し、より良いケアの提供をサポートします。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="index.html#features">機能紹介</a></li>
+                        <li><a href="index.html#benefits">導入メリット</a></li>
+                        <li><a href="index.html#demo">操作デモ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">資料ダウンロード</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">利用規約</a></li>
+                        <li><a href="#">セキュリティ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 介護電子同意システム. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
